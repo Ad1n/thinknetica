@@ -1,0 +1,11 @@
+h1 = @question.title
+h2 = @question.body
+table
+  tr
+    td = render @question.answers
+  tr
+    td = render 'answers/new', question: @question, answer: @answer
+  tr
+    if = current_user
+    td = link_to 'Удалить вопрос', question_path, method: :delete
+

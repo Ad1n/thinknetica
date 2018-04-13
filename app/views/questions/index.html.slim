@@ -1,0 +1,24 @@
+
+h1 Question page
+
+
+- unless @questions.empty?
+  table
+    tr
+      th ID
+      th Title
+      th Question
+
+    - @questions.each do |q|
+      tr
+        td.id = q.id
+        td.title = link_to q.title, question_path(q)
+        td.body = q.body
+- else
+  p
+  | No questions found. Please add some questions.
+
+-if current_user
+ p= link_to 'Ask question', new_question_path
+-else
+ p Пройдите регистрацию для того чтобы задавать вопросы

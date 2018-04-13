@@ -2,6 +2,7 @@
 # end
 
 class Answer < ActiveRecord::Base
-  validates  :body,  :presence => true
+  validates  :body, presence: true
   belongs_to :question
+  belongs_to :user
 end
